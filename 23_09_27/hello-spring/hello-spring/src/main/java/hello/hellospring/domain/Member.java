@@ -1,12 +1,10 @@
 package hello.hellospring.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Member {
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name ="name")
@@ -15,4 +13,6 @@ public class Member {
     public Long getId() { return id; }
 
     public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
 }
